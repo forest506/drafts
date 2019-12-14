@@ -1,0 +1,10 @@
+# escape=`
+FROM mcr.microsoft.com/windows/servercore:1909
+COPY HelloDocker.exe c:/
+COPY vcredist_x64.exe c:/
+#WORKDIR c:/
+RUN dir c:\
+RUN c:\vcredist_x64.exe /install /quiet /norestart
+CMD c:/HelloDocker.exe
+#COPY hello.bat /
+#CMD hello.bat
